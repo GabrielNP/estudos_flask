@@ -40,5 +40,13 @@ def criar():
 def login():
     return render_template('login.html', titulo="Entrar na Jogoteca")
 
+
+@app.route('/autenticar', methods=['POST',])
+def autenticar():
+    if 'mestra' == request.form['senha']:
+        return redirect('/')
+    else:
+        return redirect('/login')
+
 app.run(host='0.0.0.0', port=8080, debug=True)
 
