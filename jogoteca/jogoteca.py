@@ -36,6 +36,9 @@ def criar():
     lista.append(jogo)
     return redirect('/')
 
+@app.route('/login')
+def login():
+    return render_template('login.html', titulo="Entrar na Jogoteca")
 
 app.run(host='0.0.0.0', port=8080, debug=True)
 
